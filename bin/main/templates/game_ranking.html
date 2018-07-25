@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ranking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" />
+  </head>
+
+
+  <body>
+    <header class="navbar navbar-light bg-light">
+      <p class="navbar-brand">ランキング</p>
+    </header>
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="player name">
+      </div>
+      <div class="form-group">
+        <select class="form-control">
+          <option value="pug">pug</option>
+          <option value="acc" selected>acc</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control">
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="40">40</option>
+          <option value="80">50</option>
+          <option value="160">160</option>
+        </select>
+      </div>
+    </form>
+
+    <br><br>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th>rank</th>
+      <th>player</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-primary">
+      <th scope="row">1</th>
+      <td>おれ</td>
+      <td>1000000</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>わたし</td>
+      <td>999999</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>あなた</td>
+      <td>999998</td>
+    </tr>
+  </tbody>
+</table>
+  </body>
+</html>
