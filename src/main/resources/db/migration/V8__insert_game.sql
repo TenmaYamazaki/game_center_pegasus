@@ -1,0 +1,2 @@
+INSERT INTO games(game_name, game_code, game_photo, game_desc) VALUES('パグらたたき', 'pug', 'pugdispray.jpg', '画面に表示されるパグをたたこう！。');
+INSERT INTO games(game_name, game_code, game_photo, game_desc) VALUES('玉転がしゲーム', 'acc', 'accdispray.jpg', '画面左上の青球を画面右下の赤玉に当てよう！');

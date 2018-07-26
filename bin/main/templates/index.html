@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http:/www.thymeLeaf.org">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +14,25 @@
 
     <br><br><br>
 
-
+    <div th:each="game : ${games}">
+        <div class="media">
+        <input type="image" class="d-flex mr-3" th:src="'/photo/' + ${game.gamePhoto}" width="64" height="64" alt="Generic placeholder image">
+        <div class="media-body">
+          <h5 class="mt-0" th:text="${game.gameName}"></h5>
+            <p th:text="${game.gameDesc}"></p>
+          <br>
+          <div style="display:inline-flex">
+            <form class="form-group" th:action="'/' + ${game.gameCode} + '/pray'" method="get">
+              <button type="submit" class="btn btn-success">start</button>
+            </form>
+            <form class="form-group" th:action="'/ranking/' + ${game.gameCode}" method="get">
+              <button type="submit" class="btn btn-info">ranking</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- 
       <div class="media">
         <input type="image" class="d-flex mr-3" src="photo/accdispray.jpg" width="64" height="64" alt="Generic placeholder image">
         <div class="media-body">
@@ -48,6 +66,7 @@
         </div>
       </div>
     </div>
+ -->
 
   </body>
 </html>

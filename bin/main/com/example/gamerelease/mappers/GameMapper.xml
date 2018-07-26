@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.gamerelease.mappers.GameMapper">
+
+    <resultMap id="gameResultMap" type="com.example.gamerelease.domains.Game">
+        <result property="gameId" column="game_id" />
+        <result property="gameName" column="game_name" />
+        <result property="gameCode" column="game_code" />
+        <result property="gamePhoto" column="game_photo" />
+        <result property="gameDesc" column="game_desc" />
+    </resultMap>
+    
+    <select id="all" resultMap="gameResultMap">
+        SELECT * FROM games
+    </select>
+</mapper>
