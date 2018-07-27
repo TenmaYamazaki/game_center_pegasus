@@ -12,24 +12,20 @@
       <p class="navbar-brand">ゲーム</p>
     </header>
 
-    <br><br><br>
-
-    <div th:each="game : ${games}">
-        <div class="media">
-        <input type="image" class="d-flex mr-3" th:src="'/photo/' + ${game.gamePhoto}" width="64" height="64" alt="Generic placeholder image">
-        <div class="media-body">
-          <h5 class="mt-0" th:text="${game.gameName}"></h5>
-            <p th:text="${game.gameDesc}"></p>
-          <br>
-          <div style="display:inline-flex">
-            <form class="form-group" th:action="'/' + ${game.gameCode} + '/pray'" method="get">
-              <button type="submit" class="btn btn-success">start</button>
-            </form>
-            <form class="form-group" th:action="'/ranking/' + ${game.gameCode}" method="get">
-              <button type="submit" class="btn btn-info">ranking</button>
-            </form>
+    <div class="container">
+      <div class="mt-5" th:each="game : ${games}">
+        <a th:href="'/' + ${game.gameCode} + '/pray'">
+          <div class="media">
+            <img class="d-flex mr-3" th:src="'/photo/' + ${game.gamePhoto}" width="64" height="64" alt="Generic placeholder image">
+            <div class="media-body">
+              <h5 class="mt-0" th:text="${game.gameName}"></h5>
+              <p th:text="${game.gameDesc}"></p>
+              <form class="form-group" th:action="'/ranking/' + ${game.gameCode}" method="get">
+                <button type="submit" class="btn btn-info">ranking</button>
+              </form>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 <!-- 
