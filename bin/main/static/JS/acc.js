@@ -366,7 +366,7 @@ function restart() {
   //難易度に関わる設定
   score = 10000;
   timeout = 20;
-  kosu = 8 + level * (level / 5 * 2);
+  kosu += level;
   maxrad = 60;
   minrad = 30 + level * 10;
   losscore = 1.5;
