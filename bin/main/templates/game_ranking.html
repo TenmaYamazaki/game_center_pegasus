@@ -13,7 +13,8 @@
     <header class="navbar navbar-light bg-light">
       <p class="navbar-brand">ランキング</p>
     </header>
-    <form class="form-inline">
+<!-- 
+     <form class="form-inline">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="player name">
       </div>
@@ -32,35 +33,44 @@
           <option value="160">160</option>
         </select>
       </div>
+      <div class="form-group">
+        <input type="submit" name="表示" class="btn btn-default">
+      </div>
     </form>
+ -->
 
-    <br><br>
 
-    <table class="table">
-  <thead>
-    <tr>
-      <th>rank</th>
-      <th>player</th>
-      <th>score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="table-primary">
-      <th scope="row">1</th>
-      <td>おれ</td>
-      <td>1000000</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>わたし</td>
-      <td>999999</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>あなた</td>
-      <td>999997</td>
-    </tr>
-  </tbody>
-</table>
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th>rank</th>
+          <th>player</th>
+          <th>score</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="table-primary" th:each="rank, stat : ${ranking}">
+        <td th:text="${stat.count}"></td>
+        <td th:text="${rank.getScoreUserName()}"></td>
+        <td th:text="${rank.getScoreScore()}"></td>
+      </tr>
+      <!--  <tr class="table-primary">
+          <th scope="row">1</th>
+          <td>おれ</td>
+          <td>1000000</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>わたし</td>
+          <td>999999</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>あなた</td>
+          <td>999997</td>
+        </tr>   -->
+      </tbody>
+    </table>
+    <a href="/" style="right:0;"><button class="btn btn-info">top</button></a>
   </body>
 </html>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.gamerelease.domains.Game;
 import com.example.gamerelease.mappers.GameMapper;
@@ -27,8 +28,8 @@ public class GameController {
         return "index";
     }
     
-    @GetMapping("/pug/pray")
-    public String pug() {
-        return "pugratataki";
+    @GetMapping("/{gamecode}/play")
+    public String pug(@PathVariable String gamecode) {
+        return gamecode;
     }
 }

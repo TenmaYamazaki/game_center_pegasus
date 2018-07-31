@@ -4,15 +4,17 @@ public class AddScore {
 
     private String name;
     private int score;
+    private String gamecode;
 
     public AddScore() {
         
     }
     
-    public AddScore(String name, int score) {
-        super();
+    public AddScore(String name, int score, String gamecode) {
+        System.out.println("Game Code: " + gamecode);
         this.name = name;
         this.score = score;
+        this.gamecode = gamecode;
     }
     
     public String getName() {
@@ -26,6 +28,12 @@ public class AddScore {
     }
     public void setScore(int score) {
         this.score = score;
+    }
+    public String getGamecode() {
+        return gamecode;
+    }
+    public void setGamecode(String gamecode) {
+        this.gamecode = gamecode;
     }
     
     

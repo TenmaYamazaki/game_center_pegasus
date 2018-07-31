@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.gamerelease.mappers.ScoreMapper">
+
+    <resultMap id="scoreResultMap" type="com.example.gamerelease.domains.Score">
+        <result property="scoreId" column="score_id" />
+        <result property="gameCode" column="game_code" />
+        <result property="scoreScore" column="score_score" />
+        <result property="scoreType" column="score_type" />
+        <result property="scoreUserName" column="score_user_name" />
+    </resultMap>
+    
+    <insert id="add" parameterType="com.example.gamerelease.domains.Score">
+        INSERT INTO scores(score_score, score_user_name, game_code) VALUES (#{scoreScore}, #{scoreUserName}, #{gameCode});
+    </insert>
+    <select id="ranking" resultMap="scoreResultMap">
+        SELECT * FROM scores WHERE game_code= #{gameCode} ORDER BY score_score DESC
+    </select>
+</mapper>

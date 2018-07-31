@@ -125,16 +125,17 @@ function stop(){
   var name = prompt("ゲームオーバー！！\n点数は" + point + "点です\n" +
                       "プレーヤー名を入力してください。");
   var carrier = "name=" + name +"&score=" + point;
-  
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", "/addrank", false);
-  xhr.setRequestHeader("Content-Type", 'application/json');
-//  xhr.send("name=aaa");
-  const j = { name: name, score: point};
-  xhr.send(JSON.stringify(j));
+  if(name != null){
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "/addrank", false);
+    xhr.setRequestHeader("Content-Type", 'application/json');
+  //  xhr.send("name=aaa");
+    const j = { name: name, score: point, gamecode: "pug" };
+    xhr.send(JSON.stringify(j));
+  }
 
   if(window.confirm("リトライしますか")) {
-    location.href = "/pug/pray";
+    location.href = "/pug/play";
   } else {
     location.href = "/";
     

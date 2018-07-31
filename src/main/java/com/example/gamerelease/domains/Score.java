@@ -3,7 +3,7 @@ package com.example.gamerelease.domains;
 public class Score {
 
     private int scoreId;
-    private int gameId;
+    private String gameCode;
     private int scoreScore;
     private String scoreType;
     private String scoreUserName;
@@ -13,21 +13,31 @@ public class Score {
     public void setScoreUserName(String scoreUserName) {
         this.scoreUserName = scoreUserName;
     }
-    public Score(String name, int score) {
+    public Score(String name, int score, String gamecode) {
         this.scoreUserName = name;
         this.scoreScore = score;
+        this.gameCode = gamecode;
     }
+ 
     public int getScoreId() {
         return scoreId;
     }
     public void setScoreId(int scoreId) {
         this.scoreId = scoreId;
     }
-    public int getGameId() {
-        return gameId;
+    public Score(int scoreId, int scoreScore, String scoreType, String scoreUserName, String gamecode) {
+        super();
+        this.scoreId = scoreId;
+        this.gameCode = gamecode;
+        this.scoreScore = scoreScore;
+        this.scoreType = scoreType;
+        this.scoreUserName = scoreUserName;
     }
-    public void setGameId(int gameId) {
-        this.gameId = gameId;
+    public String getgamecode() {
+        return gameCode;
+    }
+    public void setgamecode(String gamecode) {
+        this.gameCode = gamecode;
     }
     public int getScoreScore() {
         return scoreScore;

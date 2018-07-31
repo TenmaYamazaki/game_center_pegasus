@@ -14,7 +14,7 @@
 
     <div class="container">
       <div class="mt-5" th:each="game : ${games}">
-        <a th:href="'/' + ${game.gameCode} + '/pray'">
+        <a th:href="'/' + ${game.gameCode} + '/play'">
           <div class="media">
             <img class="d-flex mr-3" th:src="'/photo/' + ${game.gamePhoto}" width="64" height="64" alt="Generic placeholder image">
             <div class="media-body">
