@@ -26,4 +26,9 @@ public class GameController {
         model.addAttribute("games", games);
         return "index";
     }
+    
+    @GetMapping("/pug/pray")
+    public String pug() {
+        return "pugratataki";
+    }
 }

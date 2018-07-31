@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>パグたたきフィーバー</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/CSS/pugratataki.css}">
+    <script type="text/javascript" th:src="@{/JS/pugratataki.js}"></script>
+  </head>
+  <body>
+    <div class="all">
+        <p>パグをめっちゃたたいてね</p>
+        <h2>たたけるかな？</h2>
+        <div id="time">制限時間：60秒</div>
+        <h3 id="timegage">　</h3>
+        <div id="showPoint"><span id="point">0</span>点</div>
+        <div id="add">
+          <table id="table" border="2">
+              <div id="narabupag">
+                <tr>
+                  <td><div><img class="pag" th:src="@{/photo/mogura.png}"></div></td>
+                </tr>
+              </div>
+          </table>
+        </div>
+      </div>
+    </body>
+</html>

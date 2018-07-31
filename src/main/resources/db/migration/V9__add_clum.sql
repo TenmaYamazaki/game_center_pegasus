@@ -1,0 +1,1 @@
+ALTER table scores add score_user_name VARCHAR(100) NOT NULL;
