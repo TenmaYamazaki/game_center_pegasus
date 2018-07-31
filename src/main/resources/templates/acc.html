@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>acc</title>
-    <link rel="stylesheet" href="acc.css">
+    <link rel="stylesheet" th:href="@{/CSS/acc.css}">
   </head>
   <body>
     <div id="wrap">
@@ -17,7 +17,6 @@
 
     <input id="rad" type="text" oninput="radchange()" value="50"> -->
 
-    <script type="text/javascript" src="acc.js"></script>
-    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" th:src="@{/JS/acc.js}"></script>
   </body>
 </html>
