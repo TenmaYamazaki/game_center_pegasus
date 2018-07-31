@@ -31,15 +31,13 @@ public class ScoreController {
     @ResponseBody
     public Score addrank(@RequestBody AddScore addScore) {
         String name = addScore.getName();
-        if(name == null) {
+        if(name.equals("")) {
             name = "anonymous";
         }
         int score = addScore.getScore();
         String gameCode = addScore.getGamecode();
         Score s = new Score(name, score, gameCode);
-        if(name != null) {
             scoremapper.add(s);
-        }
         return s;
     }
     

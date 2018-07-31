@@ -11,7 +11,7 @@ var point = 0;
 var gameover = false;
 var addCount = 0;
 var addcheck = 0;
-var timelimit = 60000;
+var timelimit = 6000;
 var gagecount = timelimit;
 
 
@@ -124,13 +124,14 @@ function stop(){
   gameover = true;
   var name = prompt("ゲームオーバー！！\n点数は" + point + "点です\n" +
                       "プレーヤー名を入力してください。");
+  var carrier = "name=" + name +"&score=" + point;
+
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "/addrank", true);
   xhr.setRequestHeader("Content-Type", 'application/json');
 //  xhr.send("name=aaa");
   const j = { name: name, score: point, gamecode: "pug" };
-  xhr.send(JSON.stringify(j));
- }
+    xhr.send(JSON.stringify(j));
 
   if(window.confirm("リトライしますか")) {
     location.href = "/pug/play";
