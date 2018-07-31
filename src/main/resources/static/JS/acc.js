@@ -31,7 +31,7 @@ var sumscore = 0;
 var sumbreeki = 0;
 //windowの準備
 var canvaz = document.getElementById('canvas');
-setTimeout(gameover, 500);
+
 function expandCanvas() {
   var b = document.body;
   var d = document.documentElement;
