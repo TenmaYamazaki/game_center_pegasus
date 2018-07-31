@@ -11,7 +11,7 @@ var point = 0;
 var gameover = false;
 var addCount = 0;
 var addcheck = 0;
-var timelimit = 6000;
+var timelimit = 60000;
 var gagecount = timelimit;
 
 
