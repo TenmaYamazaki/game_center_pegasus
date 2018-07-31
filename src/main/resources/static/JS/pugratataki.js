@@ -124,9 +124,6 @@ function stop(){
   gameover = true;
   var name = prompt("ゲームオーバー！！\n点数は" + point + "点です\n" +
                       "プレーヤー名を入力してください。");
-  if(name == null){
-    name = "anonymous";
-  }
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "/addrank", true);
   xhr.setRequestHeader("Content-Type", 'application/json');
