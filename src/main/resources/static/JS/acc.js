@@ -149,7 +149,7 @@ function gameover() {
   xhr.open("POST", "/addrank", false);
   xhr.setRequestHeader("Content-Type", 'application/json');
   //xhr.send("name=aaa");
-  const j = { name: name, score: sumscore, gameCode: "acc"};
+  const j = { name: name, score: sumscore, gamecode: "acc"};
   xhr.send(JSON.stringify(j));
   
   if(window.confirm("リトライしますか")) {
