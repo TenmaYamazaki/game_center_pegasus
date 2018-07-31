@@ -11,7 +11,7 @@ var point = 0;
 var gameover = false;
 var addCount = 0;
 var addcheck = 0;
-var timelimit = 5000;
+var timelimit = 6000;
 var gagecount = timelimit;
 
 
@@ -127,7 +127,7 @@ function stop(){
   var carrier = "name=" + name +"&score=" + point;
   if(name != null){
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "/addrank", false);
+    xhr.open("POST", "/addrank", true);
     xhr.setRequestHeader("Content-Type", 'application/json');
   //  xhr.send("name=aaa");
     const j = { name: name, score: point, gamecode: "pug" };

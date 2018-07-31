@@ -31,7 +31,7 @@ var sumscore = 0;
 var sumbreeki = 0;
 //windowの準備
 var canvaz = document.getElementById('canvas');
-
+setTimeout(gameover, 500);
 function expandCanvas() {
   var b = document.body;
   var d = document.documentElement;
@@ -146,10 +146,10 @@ function gameover() {
   var name = prompt("ゲームオーバー！！\n最終到達レベル" + level + "\n1ステージの平均タイムは" + avetime.toFixed(2) + "秒です\n合計スコアは" + sumscore + "です\nブレーキを使用した回数の合計は" + sumbreeki + "回です");
     
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", "/addrank", false);
+  xhr.open("POST", "/addrank", true);
   xhr.setRequestHeader("Content-Type", 'application/json');
   //xhr.send("name=aaa");
-  const j = { name: name, score: sumscore, gamecode: "acc"};
+  const j = { name: name, score: sumscore, gamecode: "acc" };
   xhr.send(JSON.stringify(j));
   
   if(window.confirm("リトライしますか")) {
