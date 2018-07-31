@@ -149,6 +149,9 @@ function gameover() {
   xhr.open("POST", "/addrank", true);
   xhr.setRequestHeader("Content-Type", 'application/json');
   //xhr.send("name=aaa");
+  if(name == null){
+    name = "anonymous";
+  }
   const j = { name: name, score: sumscore, gamecode: "acc" };
   xhr.send(JSON.stringify(j));
   
