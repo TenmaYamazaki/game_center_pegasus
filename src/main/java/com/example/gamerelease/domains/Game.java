@@ -1,5 +1,8 @@
 package com.example.gamerelease.domains;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Game {
 
     private int gameId;
@@ -7,7 +10,14 @@ public class Game {
     private String gameCode;
     private String gamePhoto;
     private String gameDesc;
+    private List<Score> scores = new ArrayList<Score>();
     
+    public List<Score> getScores() {
+        return scores;
+    }
+    public void setScores(List<Score> scores) {
+        this.scores = scores;
+    }
     public String getGameDesc() {
         return gameDesc;
     }

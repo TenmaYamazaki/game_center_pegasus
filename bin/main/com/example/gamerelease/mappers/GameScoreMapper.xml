@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.gamerelease.mappers.GameScoreMapper">
+
+    <resultMap type="com.example.gamerelease.domains.Game" id="gameScoreResultMap">
+        <result property="gameId" column="game_id" />
+        <result property="gameName" column="game_name" />
+        <result property="gameCode" column="game_code" />
+        <result property="gamePhoto" column="game_photo" />
+        <result property="gameDesc" column="game_desc" />
+        <collection property="scores" ofType="Score" resultMap="ScoreResult" columnPrefix="score_"></collection>
+    </resultMap>
+    
+    <resultMap type="com.example.gamerelease.domains.Score" id="scoreResultMap">
+        <result property="scoreId" column="score_id" />
+        <result property="gameCode" column="game_code" />
+        <result property="scoreScore" column="score_score" />
+        <result property="scoreType" column="score_type" />
+        <result property="scoreUserName" column="score_user_name" />
+    </resultMap>
+    
+    <select id="all" resultMap="gameScoreResultMap">
+        SELECT g.game_name, s.score_user_name as score_score_user_name, s.score_score as score_score_score FROM games g JOIN scores s USING(game_code);
+    </select>
+</mapper>
