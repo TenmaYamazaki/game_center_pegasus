@@ -7,6 +7,7 @@ public class Score {
     private int scoreScore;
     private String scoreType;
     private String scoreUserName;
+    
     public String getScoreUserName() {
         return scoreUserName;
     }
@@ -17,6 +18,10 @@ public class Score {
         this.scoreUserName = name;
         this.scoreScore = score;
         this.gameCode = gamecode;
+    }
+    public Score(String gameName, String scoreUserName, int score) {
+        this.scoreUserName = scoreUserName;
+        this.scoreScore = score;
     }
  
     public int getScoreId() {

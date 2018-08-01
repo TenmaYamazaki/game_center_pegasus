@@ -49,5 +49,4 @@ public class Game {
         this.gameCode = gameCode;
     }
     
-    
 }
