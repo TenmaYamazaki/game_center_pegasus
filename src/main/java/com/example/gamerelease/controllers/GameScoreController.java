@@ -23,8 +23,8 @@ public class GameScoreController {
     
     @GetMapping("ranking/{gameCode}")
     public String ranking(@PathVariable String gameCode, Model model) {
-        List<Game> ranking = gameScoreMapper.ranking(gameCode);
-        System.out.println("aaa" + ranking.size());
+        Game ranking = gameScoreMapper.ranking(gameCode);
+        System.out.println("aaa" + ranking);
         model.addAttribute("ranking", ranking);
         return "game_ranking";
     }

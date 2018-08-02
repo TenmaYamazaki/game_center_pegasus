@@ -9,5 +9,5 @@ import com.example.gamerelease.domains.Game;
 
 @Mapper
 public interface GameScoreMapper {
-    List<Game> ranking(String gameCode);
+    Game ranking(String gameCode);
 }
