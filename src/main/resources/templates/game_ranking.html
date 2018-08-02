@@ -50,10 +50,10 @@
         </tr>
       </thead>
       <tbody>
-      <tr class="table-primary" th:each="rank, stat : ${ranking.getScore()}">
+      <tr class="table-primary" th:each="score, stat : ${ranking.getScore()}">
         <td th:text="${stat.count}"></td>
-        <td th:text="${rank.getScoreUserName()}"></td>
-        <td th:text="${rank.getScoreScore()}"></td>
+        <td th:text="${score.getScoreUserName()}"></td>
+        <td th:text="${score.getScoreScore()}"></td>
       </tr>
       <!--  <tr class="table-primary">
           <th scope="row">1</th>
