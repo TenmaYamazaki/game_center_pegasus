@@ -12,10 +12,27 @@ public class Game {
     private String gameDesc;
     private List<Score> scores = new ArrayList<Score>();
     
-    public List<Score> getScores() {
+    public Game(int gameId, String gameName, String gameCode, String gamePhoto, String gameDesc) {
+        this.gameId = gameId;
+        this.gameName = gameName;
+        this.gameCode = gameCode;
+        this.gamePhoto = gamePhoto;
+        this.gameDesc = gameDesc;
+    }
+    
+    public Game(int gameId, String gameName, String gameCode, String gamePhoto, String gameDesc, int scoreId, 
+                String gameCode2, int scoreScore, String scoreType, String scoreUserName) {
+        this.gameId = gameId;
+        this.gameName = gameName;
+        this.gameCode = gameCode;
+        this.gamePhoto = gamePhoto;
+        this.gameDesc = gameDesc;
+    }
+    
+    public List<Score> getScore() {
         return scores;
     }
-    public void setScores(List<Score> scores) {
+    public void setScore(List<Score> scores) {
         this.scores = scores;
     }
     public String getGameDesc() {
@@ -48,6 +65,5 @@ public class Game {
     public void setGameCode(String gameCode) {
         this.gameCode = gameCode;
     }
-    
     
 }

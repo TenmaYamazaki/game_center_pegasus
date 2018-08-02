@@ -3,23 +3,39 @@
 <mapper namespace="com.example.gamerelease.mappers.GameScoreMapper">
 
     <resultMap type="com.example.gamerelease.domains.Game" id="gameScoreResultMap">
-        <result property="gameId" column="game_id" />
+        <id property="gameId" column="game_id" />
         <result property="gameName" column="game_name" />
         <result property="gameCode" column="game_code" />
         <result property="gamePhoto" column="game_photo" />
         <result property="gameDesc" column="game_desc" />
-        <collection property="scores" ofType="Score" resultMap="ScoreResult" columnPrefix="score_"></collection>
+        <collection property="score" ofType="com.example.gamerelease.domains.Score" resultMap="scoreResultMap"></collection>
     </resultMap>
     
     <resultMap type="com.example.gamerelease.domains.Score" id="scoreResultMap">
-        <result property="scoreId" column="score_id" />
+        <id property="scoreId" column="score_id" />
         <result property="gameCode" column="game_code" />
         <result property="scoreScore" column="score_score" />
         <result property="scoreType" column="score_type" />
         <result property="scoreUserName" column="score_user_name" />
     </resultMap>
     
-    <select id="all" resultMap="gameScoreResultMap">
-        SELECT g.game_name, s.score_user_name as score_score_user_name, s.score_score as score_score_score FROM games g JOIN scores s USING(game_code);
+    <select id="ranking" resultMap="gameScoreResultMap">
+        SELECT
+            g.game_id,
+            g.game_name,
+            g.game_code,
+            g.game_photo,
+            g.game_desc,
+            s.score_id,
+            s.game_code,
+            s.score_score,
+            s.score_type,
+            s.score_user_name 
+        FROM 
+            games g 
+        JOIN scores s 
+        USING(game_code) 
+        WHERE game_code = #{game_code} 
+        ORDER BY score_score DESC
     </select>
 </mapper>

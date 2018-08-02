@@ -7,6 +7,23 @@ public class Score {
     private int scoreScore;
     private String scoreType;
     private String scoreUserName;
+    
+    public Score(int gameId, String gameName, String gameCode, String gamePhoto, String gameDesc, int scoreId, 
+            String gameCode2, int scoreScore, String scoreType, String scoreUserName) {
+        this.scoreId = scoreId;
+        this.gameCode = gameCode;
+        this.scoreScore = scoreScore;
+        this.scoreType = scoreType;
+        this.scoreUserName = scoreUserName;
+}
+    
+    public Score(int scoreId, String gameCode, int scoreScore, String scoreType, String scoreUserName) {
+        this.scoreId = scoreId;
+        this.gameCode = gameCode;
+        this.scoreScore = scoreScore;
+        this.scoreUserName = scoreUserName;
+    }
+    
     public String getScoreUserName() {
         return scoreUserName;
     }
@@ -17,6 +34,10 @@ public class Score {
         this.scoreUserName = name;
         this.scoreScore = score;
         this.gameCode = gamecode;
+    }
+    public Score(String gameName, String scoreUserName, int score) {
+        this.scoreUserName = scoreUserName;
+        this.scoreScore = score;
     }
  
     public int getScoreId() {

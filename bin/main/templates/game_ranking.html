@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>ranking</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/CSS/game_ranking.css" />
   </head>
 
 
@@ -38,7 +39,7 @@
       </div>
     </form>
  -->
-
+    <p id="title" th:text="${ranking.getGameName()}"></p>
 
     <table class="table mt-3">
       <thead>
@@ -49,7 +50,7 @@
         </tr>
       </thead>
       <tbody>
-      <tr class="table-primary" th:each="rank, stat : ${ranking}">
+      <tr class="table-primary" th:each="rank, stat : ${ranking.getScore()}">
         <td th:text="${stat.count}"></td>
         <td th:text="${rank.getScoreUserName()}"></td>
         <td th:text="${rank.getScoreScore()}"></td>

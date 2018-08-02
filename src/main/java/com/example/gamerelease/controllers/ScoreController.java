@@ -53,11 +53,11 @@ public class ScoreController {
         return s;
     }
     
-    @GetMapping("/ranking/{gameCode}")
-    public String ranking(@PathVariable String gameCode, Model model) {
-        List<Score> ranking = scoremapper.ranking(gameCode);
-        model.addAttribute("ranking", ranking);
-        return "game_ranking";
-    }
+//    @GetMapping("/ranking/{gameCode}")
+//    public String ranking(@PathVariable String gameCode, Model model) {
+//        List<Score> ranking = scoremapper.ranking(gameCode);
+//        model.addAttribute("ranking", ranking);
+//        return "game_ranking";
+//    }
     
 }

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+p#title {
+  font-size: 12px;
+  text-align: center;
+  background-color: #E6E6E6;
+  font-whight: bold;
+  text-shadow: 3px 3px 2px #6E6E6E;
+}
