@@ -21,7 +21,7 @@ public class GameScoreController {
         this.gameScoreMapper = gameScoreMapper;
     }
     
-    @GetMapping("ranking/{ gameCode}")
+    @GetMapping("ranking/{gameCode}")
     public String ranking(@PathVariable String gameCode, Model model) {
         Game ranking = gameScoreMapper.ranking(gameCode);
         System.out.println("aaa" + ranking);
