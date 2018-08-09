@@ -8,7 +8,7 @@
         <result property="gameCode" column="game_code" />
         <result property="gamePhoto" column="game_photo" />
         <result property="gameDesc" column="game_desc" />
-        <collection property="score" ofType="com.example.gamerelease.domains.Score" resultMap="scoreResultMap"></collection>
+        <collection property="scores" ofType="com.example.gamerelease.domains.Score" resultMap="scoreResultMap"></collection>
     </resultMap>
     
     <resultMap type="com.example.gamerelease.domains.Score" id="scoreResultMap">
